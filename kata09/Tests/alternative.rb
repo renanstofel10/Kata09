@@ -3,7 +3,7 @@ require_relative '../Pages/alternative.rb'
 
 class TestAlternative < Test::Unit::TestCase
 
-    def dadosInput()
+    def dadosInput(quant1, quant2, quant3, quant4)
 
         ac = AlternativeCalc.new
 
@@ -17,20 +17,16 @@ class TestAlternative < Test::Unit::TestCase
             case quant  
 
                 when a
-                quant = 3
-                ac.dadosItem(a, quant)
+                ac.dadosItem(a, quant1)
         
                 when b
-                quant = 2
-                ac.dadosItem(b, quant)
+                ac.dadosItem(b, quant2)
         
                 when c
-                quant = 5
-                ac.dadosItem(c, quant)
+                ac.dadosItem(c, quant3)
         
                 else
-                quant = 2
-                ac.dadosItem(d, quant)
+                ac.dadosItem(d, quant4)
             end
         end
     end    
@@ -60,6 +56,6 @@ class TestAlternative < Test::Unit::TestCase
         total_abcd = total_a + total_b + total_c + total_d; assert_equal(305 , total_abcd)
 
         #PRINT DADOS
-        dadosInput()
+        dadosInput(quantityA, quantityB, quantityC, quantityD)
     end
 end
